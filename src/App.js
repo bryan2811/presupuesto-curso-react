@@ -1,7 +1,12 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import Pregunta from './Components/Pregunta';
 
 function App() {
+
+  // Definir el State
+  const [presupuesto, guardarPresupuesto] = useState(0);
+  const [restante, guardarRestante] = useState(0);
+
   return (
     <div className="App">
       <Fragment>
@@ -11,7 +16,10 @@ function App() {
             <h1>Presupuesto Semanal</h1>
 
             <div className="contenido-principal contenido">
-              <Pregunta />
+              <Pregunta 
+                guardarPresupuesto={guardarPresupuesto}
+                guardarRestante={guardarRestante}
+              />
             </div>
           </header>
         </div>
